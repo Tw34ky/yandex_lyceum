@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p style="color:#CCD0DB">И на Марсе будут яблони цвести</p>
+<div style="text-align: center;">
+    <h1>Works log</h1>
+</div>
+{% for item in news%}
+<h4>Action № {{item.id}}</h4>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-2">
+            Title of activity
+        </div>
+        <div class="col col-lg-2">
+            Team leader
+        </div>
+        <div class="col col-lg-2">
+            Duration
+        </div>
+        <div class="col col-lg-2">
+            List of collaborators
+        </div>
+        <div class="col col-lg-2">
+            Is finished
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-2">
+            {{item.job}}
+        </div>
+        <div class="col col-lg-2">
+            {{item.team_leader}}
+        </div>
+        <div class="col col-lg-2">
+            {{item.duration}} hours
+        </div>
+        <div class="col col-lg-2">
+            {{item.collaborations}}
+        </div>
+        <div class="col col-lg-2">
+            {% if item.is_finished == 1%} Is finished
+            {% else %} Is not finished
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
