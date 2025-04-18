@@ -4,6 +4,10 @@ from sqlalchemy import orm
 
 from .db_session import SqlAlchemyBase
 
+categories = orm.relationship("Category",
+                              secondary="association",
+                              backref="news")
+
 
 class News(SqlAlchemyBase):
     __tablename__ = 'news'

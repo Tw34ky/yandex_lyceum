@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Добавление работы</h1>
+
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.job.label }}<br>
+        {{ form.job(class="form-control") }}<br>
+        {% for error in form.job.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    <p>
+        {{ form.team_leader.label }}<br>
+        {{ form.team_leader(class="form-control") }}<br>
+        {% for error in form.team_leader.errors %}
+    <p content="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    <p>
+        {{ form.collaborations.label }}<br>
+        {{ form.collaborations(class="form-control") }}<br>
+        {% for error in form.collaborations.errors %}
+    <p content="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    <p>
+        {{ form.duration.label }}<br>
+        <input type="datetime-local" name="datetimeField"/>
+    </p>
+    <p>{{ form.is_finished() }} {{ form.is_finished.label }}</p>
+    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    {{message}}
+</form>
+{% endblock %}

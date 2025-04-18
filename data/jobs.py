@@ -13,5 +13,5 @@ class Jobs(SqlAlchemyBase):
     job = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     collaborations = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     is_finished = sqlalchemy.Column(sqlalchemy.Boolean, nullable=True)
-    duration = sqlalchemy.Column(sqlalchemy.String, nullable=True)
+    duration = sqlalchemy.Column(sqlalchemy.DateTime, nullable=True)
     user = orm.relationship('User')
